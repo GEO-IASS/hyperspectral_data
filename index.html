@@ -28,9 +28,6 @@
             var listen = document.getElementById("hiperspecPlot");
             listen.addEventListener("click", hiperspecPlot, false);
 
-            //var orangesJson = [{"class": 1.0, "hiperspec": [0.566, 0.566, 0.565, 0.565, 0.565, 0.565, 0.565, 0.565, 0.565, 0.565, 0.566, 0.566, 0.565, 0.567, 0.567, 0.567, 0.568], "MLE": [0.62, 0.533]},{"class": 2.0, "hiperspec": [0.58, 0.58, 0.58, 0.579, 0.579, 0.578, 0.578, 0.578, 0.578, 0.578, 0.578, 0.577, 0.577, 0.577, 0.577, 0.579, 0.579], "MLE": [0.613, 0.602]},{"class": 2.0, "hiperspec": [0.526, 0.526, 0.526, 0.525, 0.526, 0.526, 0.526, 0.526, 0.527, 0.527, 0.527, 0.528, 0.527, 0.529, 0.529, 0.529, 0.529], "MLE": [0.624, 0.291]},{"class": 2.0, "hiperspec": [0.442, 0.442, 0.441, 0.441, 0.441, 0.44, 0.44, 0.441, 0.441, 0.44, 0.44, 0.44, 0.44, 0.44, 0.44, 0.439, 0.44], "MLE": [0.893, 0.79]},{"class": 1.0, "hiperspec": [0.515, 0.515, 0.514, 0.514, 0.514, 0.514, 0.514, 0.513, 0.513, 0.513, 0.513, 0.512, 0.512, 0.513, 0.513, 0.512, 0.513], "MLE": [0.816, 0.962]},{"class": 1.0, "hiperspec": [0.555, 0.555, 0.555, 0.555, 0.554, 0.554, 0.555, 0.554, 0.554, 0.554, 0.554, 0.553, 0.553, 0.553, 0.554, 0.555, 0.555], "MLE": [0.634, 0.517]},{"class": 2.0, "hiperspec": [0.442, 0.441, 0.441, 0.441, 0.441, 0.441, 0.44, 0.44, 0.44, 0.44, 0.44, 0.44, 0.44, 0.439, 0.439, 0.44, 0.44], "MLE": [0.917, 0.895]}];
-
-
             var width = 300;
             var height = 300;
 
@@ -41,10 +38,10 @@
             graph.append("rect")
                 .attr("width", width)
                 .attr("height", height)
-                .style("fill", "steelblue");
+                .style("fill", "#CCEEFF");
 
 
-            d3.json("orangesData.json", function(error, orangesJson) {
+            d3.json("data/orangesData.json", function(error, orangesJson) {
                 
                 circles = graph.selectAll("circle")
                     .data(orangesJson);
