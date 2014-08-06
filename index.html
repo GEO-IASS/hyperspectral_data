@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>MLE representation</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
         <script src="http://d3js.org/d3.v3.min.js"></script>
-        <!--<script type="text/javascript" src="d3/d3.v3.min.js"></script>-->
+    
         
     <style></style>
     </head>
@@ -19,70 +20,8 @@
         </h3>
 
         <svg class="chart"></svg>
-        <script>
 
-
-            var listen = document.getElementById("MLEplot");
-            listen.addEventListener("click", MLEplot, false);
-
-            var listen = document.getElementById("hiperspecPlot");
-            listen.addEventListener("click", hiperspecPlot, false);
-
-            var width = 300;
-            var height = 300;
-
-            var graph = d3.select(".chart")
-                .attr("width", width)
-                .attr("height", height);
-
-            graph.append("rect")
-                .attr("width", width)
-                .attr("height", height)
-                .style("fill", "#CCEEFF");
-
-
-            d3.json("data/orangesData.json", function(error, orangesJson) {
-                
-                circles = graph.selectAll("circle")
-                    .data(orangesJson);
-
-                circles.enter()
-                    .append("circle")
-                    .attr("r", 10)
-                    .attr("cx", width/2)
-                    .attr("cy", height/2)
-                    .style("fill", function(d) {
-                        if (d.class === 1) {
-                            return "green";
-                        }
-                        else {
-                            return "red";
-                        }
-                    });
-
-                });
-
-            function type(d) { return d; }
-
-            function hiperspecPlot() {
-                circles
-                  .transition()
-                    .duration(750)
-                    .attr("cx", function(d) { return d.hiperspec[0]*100 })
-                    .attr("cy", function(d) { return d.hiperspec[11]*100 });
-            }
-
-            function MLEplot() {
-                circles
-                  .transition()
-                    .duration(750)
-                    .attr("cx", function(d) { return d.MLE[0]*100 })
-                    .attr("cy", function(d) { return d.MLE[1]*100 });
-            }
-
-                
-        </script>
-        
+        <script src="js/d3plot.js"></script>
     </body>
     
     
