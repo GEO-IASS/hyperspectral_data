@@ -5,6 +5,7 @@ listenMLE.addEventListener("click", MLEplot, false);
 var listenHiperspec = document.getElementById("hiperspecPlot");
 listenHiperspec.addEventListener("click", hiperspecPlot, false);
 
+
 var margin = {top: 20, right: 30, bottom: 30, left: 40},
     width = 700 - margin.left - margin.right;
     height = 500 - margin.top - margin.bottom;
@@ -68,11 +69,22 @@ d3.json("data/orangesData.json", function(orangesJson) {
     });
 
 function hiperspecPlot() {
-    circles
-      .transition()
-        .duration(750)
-        .attr("cx", function(d) { return xScale(d.hiperspec[0]) })
-        .attr("cy", function(d) { return yScale(d.hiperspec[11]) });
+    // Get features from the inputs
+    var feature1 = document.getElementById('feature1').value;
+    var feature2 = document.getElementById('feature2').value;
+
+    if (  (feature1 >= 0 && feature1 <1568) && (feature2 >= 0 && feature2 <1568) ) {
+        circles
+          .transition()
+            .duration(750)
+            .attr("cx", function(d) { return xScale(d.hiperspec[Math.round(feature1)]) })
+            .attr("cy", function(d) { return yScale(d.hiperspec[Math.round(feature2)]) }); 
+    }
+    
+    else {
+        alert("Features should be between 0 and 1568!");
+    }
+
 }
 
 function MLEplot() {

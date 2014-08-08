@@ -2,26 +2,61 @@
 <html>
     <head>
         <meta charset="utf-8">
+        
+        <!-- Bootstrap -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <title>MLE representation</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <script src="http://d3js.org/d3.v3.min.js"></script>
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     
         
     <style></style>
     </head>
     
     <body>
-        <h3>
-            <p id="MLEplot">MLE plot!</p>
-        </h3>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Bootstrap</h1>
+                    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-2">
+                    <button type="button" class="btn btn-primary" id="MLEplot">MLE features</button>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary" id="hiperspecPlot">Original features</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="form-control input-sm" id="feature1" type="text" placeholder="First feature (between 0 and 1568)">
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control input-sm" id="feature2" type="text" placeholder="Second feature (between 0 and 1568)">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <svg class="chart"></svg>
+                </div>
+            </div>
+        </div>
 
-        <h3>
-            <p id="hiperspecPlot">Hiperspec plot!</p>
-        </h3>
 
-        <svg class="chart"></svg>
-
+        <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="js/d3plot.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </body>
     
     

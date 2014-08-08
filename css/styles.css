@@ -2,6 +2,7 @@ body {
     background-color: #c6e2ff
 }
 
+
 .axis text {
     font: 10px sans-serif;
 }
@@ -31,4 +32,10 @@ circle {
 
 circle:hover {
 	fill-opacity: 1;
+}
+
+/* Bootstrap first template*/
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
 }
