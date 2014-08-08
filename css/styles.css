@@ -7,11 +7,19 @@ body {
     font: 10px sans-serif;
 }
 
+.yLabel text {
+    font: 15px sans-serif;
+}
+
 .axis path,
 .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
+}
+
+rect {
+	shape-rendering: crispEdges;
 }
 
 circle {
@@ -34,8 +42,11 @@ circle:hover {
 	fill-opacity: 1;
 }
 
-/* Bootstrap first template*/
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+.buttons_forms {
+	padding-top: 30px;
+	padding-bottom: 15px;
+}
+
+.formulario {
+	padding-top: 10px;
 }

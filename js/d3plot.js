@@ -6,7 +6,8 @@ var listenHiperspec = document.getElementById("hiperspecPlot");
 listenHiperspec.addEventListener("click", hiperspecPlot, false);
 
 
-var margin = {top: 20, right: 30, bottom: 30, left: 40},
+
+var margin = {top: 20, right: 30, bottom: 60, left: 60},
     width = 700 - margin.left - margin.right;
     height = 500 - margin.top - margin.bottom;
 
@@ -40,12 +41,49 @@ var yAxis = d3.svg.axis()
 graph.append('g')
     .attr("class", "x axis")
     .attr("transform", "translate(0, " + height + " )")
-    .call(xAxis);
+    .call(xAxis)
+  .append("g")
+    .attr("transform", "translate(" + width/2 + ",40)")
+  .append("text")
+    .attr("class", "xLabel")
+    .style("text-anchor", "middle");
 
 graph.append("g")
     .attr("class", "y axis")
-    .call(yAxis);
+    .call(yAxis)
+  .append("g")
+    .attr("transform", "translate(-40," + height/2 + ")")
+  .append("text")
+    .attr("class", "yLabel")
+    .attr("transform", "rotate(-90)")
+    .style("text-anchor", "middle");
 
+
+// Legend
+graph.append("g")
+  .append("rect")
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("transform", "translate(500,380)")
+    .style("fill", "red");
+
+graph.append("text")
+    .attr("transform", "translate(515,380)")
+    .attr("dy", ".71em")
+    .style("text-anchor", "start")
+    .text("Decay oranges");
+
+graph.append("rect")
+    .attr("width", 10)
+    .attr("height", 10)
+    .attr("transform", "translate(500,400)")
+    .style("fill", "green");
+
+graph.append("text")
+    .attr("transform", "translate(515,400)")
+    .attr("dy", ".71em")
+    .style("text-anchor", "start")
+    .text("Sound oranges");
 
 d3.json("data/orangesData.json", function(orangesJson) {
     
@@ -66,19 +104,42 @@ d3.json("data/orangesData.json", function(orangesJson) {
             }
         });
 
+        // Initial plot
+        var feature1 = Math.round(Math.random()*50)
+        var feature2 = Math.round(Math.random()*50 + 1400)
+
+        circles
+            .transition()
+            .duration(750)
+            .attr("cx", function(d) { return xScale(d.hiperspec[Math.round(feature1)]) })
+            .attr("cy", function(d) { return yScale(d.hiperspec[Math.round(feature2)]) }); 
+
+        d3.select(".yLabel")
+            .text("Original feature " + feature2);
+        d3.select(".xLabel")
+            .text("Original feature " + feature1);
     });
 
-function hiperspecPlot() {
-    // Get features from the inputs
-    var feature1 = document.getElementById('feature1').value;
-    var feature2 = document.getElementById('feature2').value;
 
-    if (  (feature1 >= 0 && feature1 <1568) && (feature2 >= 0 && feature2 <1568) ) {
+
+function hiperspecPlot() {
+
+    // Get features from the inputs
+    feature1 = document.getElementById('feature1').value;
+    feature2 = document.getElementById('feature2').value; 
+
+    if (  (feature1 >= 0 && feature1 <1568 && feature1 != "") && (feature2 >= 0 && feature2 <1568 && feature2 != "") ) {
         circles
           .transition()
             .duration(750)
             .attr("cx", function(d) { return xScale(d.hiperspec[Math.round(feature1)]) })
             .attr("cy", function(d) { return yScale(d.hiperspec[Math.round(feature2)]) }); 
+
+        d3.select(".yLabel")
+            .text("Original feature " + feature2);
+        d3.select(".xLabel")
+            .text("Original feature " + feature1);
+
     }
     
     else {
@@ -93,4 +154,9 @@ function MLEplot() {
         .duration(750)
         .attr("cx", function(d) { return xScale(d.MLE[0]) })
         .attr("cy", function(d) { return yScale(d.MLE[1]) });
+
+    d3.select(".yLabel")
+        .text("MLE feature 2");
+    d3.select(".xLabel")
+        .text("MLE feature 1");
 }
