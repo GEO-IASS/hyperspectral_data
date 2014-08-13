@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>PCA representation</title>
+        <title>Dimensionality reduction</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
 
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-7 col-md-offset-2">
                     <h1>Dimensionality reduction</h1>
                     <!-- <p>Methods of dimensionality reduction are tools that play an important role in the fields of data analysis, data mining, and machine learning. They provide a way to understand and visualize the structure of complex data sets.</p> -->
 
@@ -33,22 +33,28 @@
 
                 </div>
             </div>
+
             <div class="row buttons_forms">
-                <div class="col-md-2 col-md-offset-2">
-                    <button type="button" class="btn btn-primary" id="PCAplot">PCA features</button>
-                </div>
-                <div class="col-md-6">
-                    <button type="button" class="btn btn-primary" id="hiperspecPlot">Original features</button>
-                        <div class="row formulario">
-                            <div class="col-md-6">
-                                <input class="form-control input-sm" id="feature1" type="text" placeholder="First feature (between 0 and 1568)">
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-control input-sm" id="feature2" type="text" placeholder="Second feature (between 0 and 1568)">
-                            </div>
+                <div class="col-md-7 col-md-offset-2">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-primary" id="PCAplot">PCA features</button>
                         </div>
+                        <div class="col-md-9">
+                            <button type="button" class="btn btn-primary" id="hiperspecPlot">Original features</button>
+                            <div class="row formulario">
+                                <div class="col-md-6">
+                                    <input class="form-control input-sm" id="feature1" type="text" placeholder="First feature (between 0 and 1568)">
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control input-sm" id="feature2" type="text" placeholder="Second feature (between 0 and 1568)">
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <svg class="chart"></svg>
