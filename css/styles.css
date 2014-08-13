@@ -7,8 +7,14 @@ body {
     font: 10px sans-serif;
 }
 
-.yLabel text {
-    font: 15px sans-serif;
+.axis text.xLabel,
+.axis text.yLabel {
+    font: 13px sans-serif;
+}
+
+.container h1 {
+	padding-top: 30px;
+	padding-bottom: 10px;
 }
 
 .axis path,

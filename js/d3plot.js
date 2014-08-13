@@ -1,6 +1,6 @@
 // Actions
-var listenMLE = document.getElementById("MLEplot");
-listenMLE.addEventListener("click", MLEplot, false);
+var listenPCA = document.getElementById("PCAplot");
+listenPCA.addEventListener("click", PCAplot, false);
 
 var listenHiperspec = document.getElementById("hiperspecPlot");
 listenHiperspec.addEventListener("click", hiperspecPlot, false);
@@ -64,26 +64,26 @@ graph.append("g")
   .append("rect")
     .attr("width", 10)
     .attr("height", 10)
-    .attr("transform", "translate(500,380)")
+    .attr("transform", "translate(485,380)")
     .style("fill", "red");
 
 graph.append("text")
-    .attr("transform", "translate(515,380)")
+    .attr("transform", "translate(500,380)")
     .attr("dy", ".71em")
     .style("text-anchor", "start")
-    .text("Decay oranges");
+    .text("Decay mandarins");
 
 graph.append("rect")
     .attr("width", 10)
     .attr("height", 10)
-    .attr("transform", "translate(500,400)")
+    .attr("transform", "translate(485,400)")
     .style("fill", "green");
 
 graph.append("text")
-    .attr("transform", "translate(515,400)")
+    .attr("transform", "translate(500,400)")
     .attr("dy", ".71em")
     .style("text-anchor", "start")
-    .text("Sound oranges");
+    .text("Sound mandarins");
 
 d3.json("data/orangesData.json", function(orangesJson) {
     
@@ -148,7 +148,7 @@ function hiperspecPlot() {
 
 }
 
-function MLEplot() {
+function PCAplot() {
     circles
       .transition()
         .duration(750)
@@ -156,7 +156,7 @@ function MLEplot() {
         .attr("cy", function(d) { return yScale(d.MLE[1]) });
 
     d3.select(".yLabel")
-        .text("MLE feature 2");
+        .text("PCA feature 2");
     d3.select(".xLabel")
-        .text("MLE feature 1");
+        .text("PCA feature 1");
 }

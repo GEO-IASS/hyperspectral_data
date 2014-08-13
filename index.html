@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>MLE representation</title>
+        <title>PCA representation</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
 
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -22,14 +22,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1>Bootstrap</h1>
-                    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                    <h1>Dimensionality reduction</h1>
+                    <!-- <p>Methods of dimensionality reduction are tools that play an important role in the fields of data analysis, data mining, and machine learning. They provide a way to understand and visualize the structure of complex data sets.</p> -->
+
+                    <p>Real-life problems naturally involve high-dimensional feature vectors. In most cases, the features contain redundant information, which means that they are not independent from each other. The large set of features can be summarized into a smaller set, with no or less redundancy. This is the goal of dimensionality reduction (DR) methods, which play an important role in the fields of data analysis, data mining, and machine learning.</p>
+
+                    <p>The following example shows a scatter plot that represent a set of 189 mandarins, some of which present decay symptoms caused by <i>Penicillium digitatum</i> fungus. For each mandarin, 1569 features were measured using a spectroscopy system. These features were processed using Principal Component Analysis (PCA), a popular method of dimensionality reduction.</p>
+
+                    <p>The graph enables to compare the PCA features with any pair of the original features. It can be observed that PCA features provide a representation that facilitates tasks such as the automatic detection of decayed fruit.</p>
+
                 </div>
             </div>
             <div class="row buttons_forms">
                 <div class="col-md-2 col-md-offset-2">
-                    <button type="button" class="btn btn-primary" id="MLEplot">MLE features</button>
+                    <button type="button" class="btn btn-primary" id="PCAplot">PCA features</button>
                 </div>
                 <div class="col-md-6">
                     <button type="button" class="btn btn-primary" id="hiperspecPlot">Original features</button>
