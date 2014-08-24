@@ -1,12 +1,9 @@
-body {
-    background-color: #c6e2ff
-}
-
 p {
 	font-family: georgia, Times, serif;
 	color: rgb(51, 51, 51);
 	line-height: 24px;
 	font-size: 16px;
+	margin-top: 14px;
 }
 
 .axis text {
@@ -59,12 +56,38 @@ circle:hover {
 	padding-bottom: 15px;
 }
 
-.formulario {
-	padding-top: 10px;
+.form-control {
+	margin-top: 8px;
+	border-radius: 0px;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 300px;
-  }
+.btn-primary {
+	background-image: none;
+	text-shadow: none;
+	border-radius: 0px;
+	border: none;
+	text-transform: uppercase;
+	font-size: 12px;
+	width: 150px;
 }
+/*
+.btn-primary {
+	background-color:#44c767;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:17px;
+	padding:9px 31px;
+	text-decoration:none;
+}
+
+.btn-primary:hover {
+	background-color:#5cbf2a;
+}
+
+.btn-primary:active {
+	position:relative;
+	top:1px;
+}
+*/
